@@ -89,7 +89,7 @@
     border-bottom: 2px solid white;
     border-radius: 0;
     color: white;
-    font-size: clamp(1rem, 1.5vw, 1.5rem); /* Adjust input text size */
+    font-size: 11px; /* Adjust input text size */
     padding: 1rem;
 }
 
@@ -99,7 +99,6 @@
 .card {
     width: 80%;
     max-width: 100%;
-    padding: 10px;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -259,7 +258,7 @@ padding: 10px 20px;
         font-size: 8px;
     }
     .form-group label, .form-control, .custom-select {
-        font-size: 9px;
+        font-size: 1.1rem;
     }
 
 .btn-color {
@@ -916,7 +915,7 @@ font-size: medium;
 @media (max-width: 480px) {
   .card-body{
       top: 53%;
-      width: 69%;
+      width: 78%;
   }
 
   .card-title {
@@ -1459,7 +1458,7 @@ button.btn.btn-send {
     padding: 7px 14px !important;
     border: none !important;
     border-radius: 5px !important;
-    font-size: clamp(1rem, 1.5vw, 1.5rem) !important;
+    font-size: 15px;
     float: left;
 }
 
@@ -1477,3 +1476,4 @@ button.btn.btn-send {
         margin-bottom: 1rem;
     }
 }
+
