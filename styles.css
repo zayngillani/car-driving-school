@@ -1,0 +1,1479 @@
+.step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align to the left */
+    margin-bottom: 10px;
+    gap: 6px; /* Reduce space between steps */
+}
+
+.step-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.step {
+    width: 25px; /* Smaller circles */
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid gray;  /* Default border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+.step.active {
+    border-color: #7D47FF; /* Active step border */
+}
+
+.dot {
+    width: 6px; /* Smaller dot */
+    height: 6px;
+    border-radius: 50%;
+    background: gray;
+}
+
+.step.active .dot {
+    background: #7D47FF; /* Active dot color */
+}
+
+/* Connector Line */
+.step-line {
+    height: 2px; /* Thinner line */
+    background: lightgray;
+    margin: 0 -6px; /* Reduce spacing */
+    width: 30%; /* Adjust length */
+}
+
+.time-slot-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 450px; /* Adjust based on design */
+    margin: auto;
+}
+
+/* Time Slots Styling */
+.time-slot {
+    flex: 0 0 23%; /* Ensures 3 per row */
+    border: 1px solid #7D47FF;
+    border-radius: 20px;
+    padding: 4px 8px;
+    margin: 3px;
+    cursor: pointer;
+    color: #7D47FF;
+    font-size: 15px;
+    text-align: center;
+    min-width: 50px;
+}
+
+.time-slot.selected {
+    background: #7D47FF;
+    color: white;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 8px;
+}
+
+.form-group label {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    border-radius: 0;
+    color: white;
+    font-size: clamp(1rem, 1.5vw, 1.5rem); /* Adjust input text size */
+    padding: 1rem;
+}
+
+
+
+/* Card Adjustments */
+.card {
+    width: 80%;
+    max-width: 100%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 95%;
+}
+
+.btn-color {
+    background: #7D47FF;
+    border: #7D47FF;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 7px;
+    text-transform: uppercase; /* Optional for uppercase text */
+    margin-top: 5%;
+}
+
+.btn-color:hover {
+    background: #7D47FF;
+    border: #7D47FF;
+}
+
+.d-flex.flex-wrap.justify-content-center {
+    width: 100%;
+    max-width: 300px; /* Adjust this value based on layout */
+    margin: auto;
+}
+
+.custom-select {
+    font-size: 15px;
+    padding: 6px;
+    border-radius: 5px;
+    color: grey; 
+}
+
+.custom-select:focus {
+    border-color: #5E3B7F; /* Darker purple when focused */
+    box-shadow: 0 0 5px rgba(94, 59, 127, 0.5);
+}
+
+.custom-select option {
+    font-size: 10px;
+    padding: 8px;
+    background: white;
+    color: black; /* Text color for selected option */
+}
+
+.custom-select option:first-child {
+    color: gray; /* Prompt text in gray */
+    background: white;
+}
+
+/* Add this to style the price with a right-aligned effect */
+.custom-select option {
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-select option span {
+    margin-left: 10px;
+}
+
+/* Additional customizations */
+.custom-select option {
+    font-size: 14px;
+    background-color: white;
+}
+
+/* Add this to your CSS to highlight invalid fields */
+.has-error .form-control, .has-error .custom-select {
+    border-color: red;
+    background-color: #f8d7da;
+}
+
+.error-message {
+    font-size: 0.85em;
+    color: red;
+    margin-top: 5px;
+}
+
+
+.calendar-container {
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: flex-start; /* Align to the left */
+    margin-top: 5px; /* Optional: add margin-top for spacing */
+    background: #EDEDF2;
+    border-radius: 6px;
+}
+}
+
+.calendar-icon {
+    margin-right: 3%; /* Apply a margin of 3% between the icon and text */
+    width: 40px; /* Adjust width */
+    height: 40px; /* Adjust height */
+}
+
+.calendar-details { /* New: Container for date and details text */
+    flex: 1; /* Allow details to take up available space */
+}
+
+.date-details-row { /* New: Row for date and details */
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.date-text {
+    margin-right: 10px; /* Space between date and details */
+}
+
+.details-text {
+    font-size: 12px;
+    margin-left: -50px; /* Optional: adjust space between icon and details */
+    padding: 3%;
+}
+
+.arrow::after {
+    content: ">"; /* Adds '>' after text */
+    font-size: 20px;
+    margin-left: 8px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+
+
+.disabled-time {
+    background-color: #ccc;
+    color: #666;
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.back-media{
+    background-color: white; 
+    color: #7D47FF; 
+    border: 1px solid #7D47FF; 
+    padding: 10px 20px; 
+    font-size: 15px; 
+    margin-top:5%;
+}
+
+.book-media {
+font-size: 15px; 
+padding: 10px 20px;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .col-md-6 {
+        width: 100%;
+    }
+    .time-slot {
+        min-width: 45px;
+        padding: 4px 8px;
+        font-size: 8px;
+    }
+    .form-group label, .form-control, .custom-select {
+        font-size: 9px;
+    }
+
+.btn-color {
+    font-size: 10px;
+    padding: 5px 10px;
+
+}
+.arrow::after {
+    font-size: 14px;
+
+}
+
+
+.back-media {
+    background-color: white; color: #7D47FF; 
+    border: 1px solid #7D47FF; 
+    padding: 5px 10px; 
+    font-size: 12px; 
+    margin-top:5%;
+}
+
+.book-media {
+font-size: 12px; 
+padding: 7px 14px;
+}
+    
+}
+
+#about-container, #service-container, #contact-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+  body {
+max-width: 100vw; /* Ensures it doesn't exceed viewport width */
+overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.image-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5vw;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.text-container {
+  max-width: 90%;
+  width: 100%;
+}
+
+.centered-text {
+  font-size: max(1vw, 12px);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+.description-text {
+  font-size: max(0.8vw, 10px);
+  line-height: 1.6;
+  max-width: 80%;
+  margin: 10px auto;
+}
+
+.btn-custom2 {
+  background-color: #7D47FF;
+  color: white;
+  font-size: max(0.8vw, 16px);
+  font-weight: bold;
+  border-radius: 7px;
+  transition: background-color 0.3s, color 0.3s;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .highlighted-text {
+      font-size: max(2vw, 18px);
+  }
+  .description-text {
+      font-size: max(0.8vw, 12px);
+  }
+  .btn-custom2 {
+      font-size: max(0.8vw, 12px);
+      padding: 8px 16px;
+  }
+}
+
+
+body {
+          font-family: 'Inter', sans-serif;
+      }
+      .container-fluid {
+          height: 23vh; /* Set height to 100% of viewport */
+          display: flex; /* Use flexbox for layout */
+          justify-content: space-between; /* Space boxes evenly */
+          flex-wrap: wrap; /* Allow wrapping for smaller screens */
+      }
+
+      .box {
+          display: flex; /* Enable flexbox layout */
+          align-items: center; /* Vertically center the items */
+          gap: 20px; /* Adds space between the icon and text */
+          background-color: #F2FFFC;
+          padding: 20px;
+          height: 120%;
+          margin: 10px;
+          flex: 1; /* Allow boxes to take equal width */
+      }
+
+      .box-icon {
+          width: 40px; /* Adjust the icon size */
+          height: auto; /* Maintain aspect ratio */
+          order: 0; /* Move icon to the beginning of the flex order */
+      }
+
+      .box-text {
+          order: 1; /* Move text content after the icon */
+      }
+
+      .box-text h3 {
+          margin: 0;
+          font-size: 2em;
+      }
+
+      .box-text p {
+          margin: 0;
+          color: #555; /* Optional: You can style the text color */
+          font-size: 15px;
+      }
+
+      .about-section {
+          display: flex;
+          align-items: flex-start; /* Align content to the top */
+          padding: 0px 20px;
+          flex-wrap: wrap; /* Allow wrapping for smaller screens */
+      }
+
+      .about-section img {
+          width: 45%;
+          height: auto;
+          margin: 64px;
+      }
+
+      .about-content {
+          padding: 11px 0px 5px 1px;
+          flex: 1;
+      }
+
+      .about-content h2 {
+          font-size: 2.5em;
+          margin-bottom: 20px;
+      }
+
+       .about-content .feature-columns {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap; /* Allow wrapping for smaller screens */
+      }
+
+      .about-content .feature-columns .feature-list {
+          width: 45%;
+      }
+
+      .about-content .feature-columns ul {
+          list-style: none;
+          padding: 0;
+      }
+
+      .about-content .feature-columns ul li {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+      }
+
+
+      .about-content .feature-columns ul li span {
+          font-size: 1.2em;
+      }
+
+      .success-stories {
+          background-color: #6c63ff;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+          display: inline-block;
+          font-weight: bold;
+          margin-bottom: 20px;
+      }
+
+      .success-stories {
+          display: flex;
+          align-items: center;
+          background-color: #6c63ff;
+          color: white;
+          padding: 15px 20px; /* Adjusted padding for better proportions */
+          border-radius: 0px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          font-size: 1em; /* Adjusted font size */
+          gap: 15px;
+      }
+
+      .success-stories .icon-container {
+          background-color: #A8E6CF; /* Light background for the icon */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 5px;
+      }
+
+      .success-stories img {
+          width: 40px; /* Adjust icon size */
+          height: auto; /* Maintain aspect ratio */
+      }
+
+      .success-stories-text {
+          display: flex;
+          flex-direction: column;
+      }
+
+      .feature-list ul {
+          list-style-type: none; /* Remove the default bullets */
+          padding: 0;
+      }
+
+      .feature-list li {
+          display: flex;
+          align-items: center;
+      }
+
+      .feature-icon {
+          width: 22px; /* Adjust this to the desired size */
+          height: 22px; /* Adjust this to the desired size */
+          background-image: url('images/task_alt.png'); /* Relative path to logo */
+          background-size: contain; /* Make sure the logo fits */
+          background-repeat: no-repeat;
+          margin-right: 8px; /* Space between the logo and the text */
+      }
+
+      .feature-list span {
+          font-size: 16px; /* Adjust the font size */
+      }
+
+
+      /* Responsive Design for Mobile */
+      @media (max-width: 768px) {
+          .container-fluid {
+              flex-direction: column; /* Stack the boxes vertically on mobile */
+              height: auto; /* Adjust height for mobile */
+          }
+
+          .about-section {
+              flex-direction: column; /* Stack image and content vertically */
+          }
+
+          .about-section img {
+              width: 80%; /* Adjust image width on mobile */
+              margin: 20px 0; /* Adjust margin for mobile */
+          }
+
+          .box {
+              flex: 1 1 100%; /* Stack boxes vertically */
+              margin: 10px 0; /* Adjust margin between stacked boxes */
+          }
+
+          .about-content .feature-columns .feature-list {
+              width: 100%; /* Make feature lists stack on mobile */
+              margin-bottom: -5px;
+          }
+      }
+
+      /* Additional responsiveness for very small screens */
+      @media (max-width: 480px) {
+          .box-text h3 {
+              font-size: 1.2em; /* Adjust font size for smaller screens */
+          }
+
+          .box-text p {
+              font-size: 8px; /* Adjust font size for smaller screens */
+          }
+
+          .success-stories {
+              font-size: 0.9em; /* Adjust font size for smaller screens */
+          }
+      }
+          .centered-text {
+          text-align: center;
+      }
+
+/* General Styles */
+.services-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.services-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.services-section p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.service-card {
+  border: none;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.service-card h3 {
+  font-size: 1.5em;
+  margin: 20px 0 10px;
+}
+
+.service-card p {
+  font-size: 1em;
+  color: #666;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-box {
+  position: relative;
+  margin-top: -37%;
+  background-color: #F2FFFC;
+  padding: 15px;
+  width: 90%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-before-text {
+  display: block;
+  margin: 0 auto 10px;
+  max-width: 50px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .logo-box {
+      position: relative;
+      bottom: 0;
+      width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+      padding: 30px 10px;
+  }
+
+  .service-card {
+      padding: 15px;
+  }
+
+  .service-card h3 {
+      font-size: 1.3em;
+  }
+
+  .service-card p {
+      font-size: 0.9em;
+  }
+}
+
+@media (max-width: 500px) {
+  .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .col-md-4 {
+      width: 100%;
+      max-width: 350px;
+  }
+
+  .logo-box {
+      width: 90%;
+      max-width: 100%;
+  }
+}
+
+.instructor-section {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 50px 0; /* Add padding for spacing */
+
+      overflow: hidden; /* Prevent image from overflowing outside the banner */
+  }
+  .instructor-card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 40px;
+      text-align: left; /* Align text to the left */
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: relative; /* Position the card as the parent for absolute positioning */
+      width: 47%;
+      margin-left: 10%;
+      max-width: 540px;
+      margin-top: 6%;
+  }
+
+  .instructor-info {
+      display: inline-block;
+      text-align: left;
+  }
+
+  .rounded-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute; 
+      top: -55px; /* Adjust as needed */ 
+      left: 25px; /* Adjust as needed */ 
+  }
+
+  .card-content {
+      padding-left: 12px; /* Adjust based on image size */
+      padding-top: 30px; /* Adjust based on image size */
+  }
+
+
+  .heading-margin {
+      margin-top: 8px;
+      margin-bottom: 20px;
+  }
+
+  .color {
+      margin: 0 15px; /* Add left and right margin for spacing */
+  }
+
+  .carousel-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-top:3%;
+  }
+  
+  .carousel-buttons {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+      display: flex;
+      justify-content: space-between;
+      width: 100px; /* Adjust the width if needed to space the buttons */
+  }
+  
+  .carousel-buttons .prev,
+  .carousel-buttons .next {
+      background: none; /* No background */
+      border: none; /* No border */
+      color: white; /* White color for the arrows */
+      font-size: 40px; /* Larger font size for the brackets */
+      cursor: pointer; /* Pointer cursor on hover */
+      font-weight: bold; /* Bold style for the brackets */
+  }
+  
+  .carousel-buttons .prev:before {
+      content: '<'; /* Left bracket */
+  }
+  
+  .carousel-buttons .next:before {
+      content: '>'; /* Right bracket */
+  }
+  
+  .verified-badge {
+display: inline-flex;
+align-items: center;
+padding: 5px 10px;
+border-radius: 20px;
+background-color: #4285f4; /* Blue color */
+color: #fff;
+font-size: 17px;
+font-weight: bold;
+}
+
+.verified-badge::before {
+content: "\2713"; /* Checkmark character */
+font-size: 19px;
+margin-right: 5px;
+}
+  
+.card-text{
+font-size: medium;
+}
+
+.instructor-holder{
+      top: -90px; left: 1px; width: 100px; height: 100px;
+  }
+
+@media (max-width: 500px) {
+  .heading-margin {
+      font-size: 30px !important; /* Reduce heading size */
+      margin-top: 20px !important;
+  }
+
+  .instructor-section {
+      padding: 20px 0; /* Adjust padding */
+  }
+
+  .instructor-card {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      margin-top: 50px; /* Push card lower to avoid overlap */
+  }
+
+  .rounded-circle {
+      width: 70px;
+      height: 70px;
+      top: -30px; /* Adjust image positioning */
+      left: 10px;
+  }
+
+  .card-content {
+      padding-left: 8px;
+      padding-top: 30px;
+  }
+
+  .card-text {
+      font-size: 10px;
+  }
+
+  h4.card-instructor {
+      font-size: 18px;
+  }
+
+  .verified-badge {
+      font-size: 14px;
+      padding: 3px 8px;
+  }
+
+  .verified-badge::before {
+      font-size: 16px;
+  }
+  .instructor-holder{
+      top: -63px; left: 1px; width: 100px; height: 100px;
+  }
+}
+
+@import 'bootstrap';
+
+
+/* In your application.css or a specific CSS file */
+/* Your existing flash styling */
+/* Your existing flash styling */
+.flash {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  animation: fadeOut 3s ease-out 3s forwards; /* Fade-out after 3 seconds */
+}
+
+/* Success (green) */
+.flash.notice {
+  background-color: #d4edda;  /* Green for success */
+  color: #155724;
+}
+
+/* Error (red) */
+.flash.alert {
+  background-color: #f8d7da;  /* Red for errors */
+  color: #721c24;
+}
+
+/* Keyframes for the fade-out effect */
+@keyframes fadeOut {
+  0% {
+    opacity: 1; /* Fully visible at the start */
+  }
+  100% {
+    opacity: 0; /* Fully invisible at the end */
+    visibility: hidden; /* Hides the element completely */
+    display: none; /* Ensures the element is not taking up space */
+  }
+}
+
+.price-text{
+  font-size: larger;
+}
+
+.card-instructor{
+  font-size: xx-large;
+}
+.card-body{
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  right: 29%;
+  top: 54%;
+  background-color: rgba(251, 247, 247, 1);
+  padding: 1rem;
+}
+
+.pic-media{
+  width: 100%; height: 100%;
+}
+
+@media (max-width: 480px) {
+  .card-body{
+      top: 53%;
+      width: 69%;
+  }
+
+  .card-title {
+      margin-bottom: 0.25rem; /* Reduce bottom margin */
+      font-size: 0.9rem; /* Adjust font size if necessary */
+  }
+
+  .price-text {
+      margin-bottom: 0; /* Reduce bottom margin */
+      font-size: 1rem; /* Adjust font size if necessary */
+      margin-top: -8px;
+  }
+
+  .card-text {
+      font-size: 0.75rem; /* Reduce text size */
+      line-height: 1.2; /* Reduce line height for tighter spacing */
+  }
+  .pic-media{
+    width: 100%;
+    height: 250px;
+  }
+}
+
+
+.book-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: x-large;
+  padding: 0;
+  display: inline;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #0d6efd;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer .nav-link {
+  color: #fff;
+  margin: 0 10px;
+}
+
+.footer .social-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.5rem;
+}
+
+.footer .divider {
+  border-top: 1px solid #444;
+  margin: 20px 0;
+}
+
+.container-fluid {
+  height: 23vh; /* Set height to 100% of viewport */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space boxes evenly */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.box {
+  display: flex; /* Enable flexbox layout */
+  align-items: center; /* Vertically center the items */
+  gap: 20px; /* Adds space between the icon and text */
+  background-color: #F2FFFC;
+  padding: 20px;
+  height: 120%;
+  margin: 10px;
+  flex: 1; /* Allow boxes to take equal width */
+}
+
+.box-icon {
+  width: 40px; /* Adjust the icon size */
+  height: auto; /* Maintain aspect ratio */
+  order: 0; /* Move icon to the beginning of the flex order */
+}
+
+.box-text {
+  order: 1; /* Move text content after the icon */
+}
+
+.box-text h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.box-text p {
+  margin: 0;
+  color: #555; /* Optional: You can style the text color */
+  font-size: 10px;
+}
+
+.about-section {
+  display: flex;
+  align-items: flex-start; /* Align content to the top */
+  padding: 40px 20px;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.about-section img {
+  width: 40%;
+  height: auto;
+  margin: 64px;
+}
+
+.about-content {
+  padding: 11px;
+  flex: 1;
+}
+
+.about-content h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.about-content .feature-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.about-content .feature-columns .feature-list {
+  width: 45%;
+}
+
+.about-content .feature-columns ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-content .feature-columns ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.about-content .feature-columns ul li span {
+  font-size: 0.9em;
+}
+
+.success-stories {
+  background-color: #6c63ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.success-stories {
+  display: flex;
+  align-items: center;
+  background-color: #6c63ff;
+  color: white;
+  padding: 15px 20px; /* Adjusted padding for better proportions */
+  border-radius: 0px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 1em; /* Adjusted font size */
+  gap: 15px;
+}
+
+.success-stories .icon-container {
+  background-color: #A8E6CF; /* Light background for the icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.success-stories img {
+  width: 20px; /* Adjust icon size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.success-stories-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-list ul {
+  list-style-type: none; /* Remove the default bullets */
+  padding: 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+}
+
+.feature-icon {
+  width: 16px; /* Adjust this to the desired size */
+  height: 16px; /* Adjust this to the desired size */
+  background-size: contain; /* Make sure the logo fits */
+  background-repeat: no-repeat;
+  margin-right: 8px; /* Space between the logo and the text */
+}
+
+.feature-list span {
+  font-size: 16px; /* Adjust the font size */
+}
+
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .container-fluid {
+      flex-direction: column; /* Stack the boxes vertically on mobile */
+      height: auto; /* Adjust height for mobile */
+  }
+
+  .about-section {
+      flex-direction: column; /* Stack image and content vertically */
+  }
+
+  .about-section img {
+      width: 80%; /* Adjust image width on mobile */
+      margin: 20px 0; /* Adjust margin for mobile */
+  }
+
+  .box {
+      flex: 1 1 100%; /* Stack boxes vertically */
+      margin: 10px 0; /* Adjust margin between stacked boxes */
+  }
+
+  .about-content .feature-columns .feature-list {
+      width: 100%; /* Make feature lists stack on mobile */
+      margin-bottom: content;
+  }
+}
+
+/* Additional responsiveness for very small screens */
+@media (max-width: 480px) {
+  .box-text h3 {
+      font-size: 1.2em; /* Adjust font size for smaller screens */
+  }
+
+  .box-text p {
+      font-size: 8px; /* Adjust font size for smaller screens */
+  }
+
+  .success-stories {
+      font-size: 0.9em; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Reset body and html margin and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Base styles for the .banner */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0px 75px 72px; /* Adjust bottom padding */
+  flex-wrap: wrap; /* Ensures items wrap on smaller screens */
+  background-image: url('<%= asset_path("home_background.png") %>'); /* Correct path using Rails helper */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 700px;
+  overflow: hidden; /* Prevent image from overflowing outside the banner */
+}
+
+.banner img {
+  max-width: 50%; /* Image width controlled by max-width */
+  height: auto;
+  margin-left: 15px;
+  transform: scale(1.1); /* Slight zoom on the image */
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+  object-fit: cover; /* Make sure the image maintains aspect ratio and covers the space */
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .banner {
+      flex-direction: column; /* Stack text and image on top of each other */
+      text-align: center; /* Center-align text */
+      padding: 15px; /* Reduce padding for mobile */
+  }
+
+  .text-content {
+      max-width: 100%; /* Text takes full width on mobile */
+      margin-bottom: 10px;
+  }
+
+  .banner img {
+      max-width: 80%; /* Image takes more width on mobile */
+      margin: 0 auto;
+      transform: scale(1.0); /* Keep image scaled normally on mobile */
+  }
+}
+.text-content p {
+  font-size: larger;
+}
+
+.text-content h1 {
+  font-size: 3.5em;
+}
+/* For very small screens like portrait mobile phones */
+@media (max-width: 480px) {
+  .text-content h1 {
+      font-size: 1.8em; /* Make the title smaller */
+      margin-top: 21%;
+  }
+
+  .text-content p {
+      font-size: 0.8em; /* Adjust paragraph size for readability */
+      margin-top: 6%;
+      margin-bottom: 20%;
+  }
+
+  .heading h3{
+      font-size: medium;
+  }
+
+  .btn-custom {
+      font-size: 1em;
+      padding: 10px 15px;
+  }
+
+  .banner img {
+      max-width: 90%; /* Image takes almost full width on small screens */
+      transform: scale(1.05); /* Slight zoom on very small screens */
+  }
+}
+
+.heading {
+  background-color: #FF733C;
+  padding: 10px 0;
+}
+
+.header {
+  background-color: #FFFFFF;
+  padding: 10px 0;
+}
+
+.header a {
+  color: black;
+  margin: 0 60px;
+  text-decoration: none;
+  font-size: x-large;
+}
+
+@media (max-width: 480px) {
+  .header {
+      background-color: #FFFFFF;
+      padding: 10px 0;
+  }
+  .header a {
+      color: black;
+      margin: 0 12px;
+      text-decoration: none;
+      font-size: x-small;
+  }
+  .company-logo-media{
+      width: 19%;
+  }
+  .book-link {
+      font-size: x-small;
+    }
+}
+
+.image-section {
+  position: relative;
+  width: 100%;
+  height: auto; /* Allow height to adjust based on image size */
+}
+
+.image-section img {
+  width: 100%; /* Ensure the image takes up the full width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.img-fluid {
+  max-width: 80%;
+  height: auto;
+}
+
+
+.centered-text {
+  font-size: 15px; /* Adjust text size */
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif; /* Apply the Inter font */
+}
+
+.btn-custom {
+  background-color: white;
+  color: black;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 7px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s;
+  text-transform: uppercase; /* Uppercase text */
+  text-decoration: none;
+}
+
+.btn-custom2 {
+  background-color: #7D47FF;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 7px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s;
+  text-transform: uppercase; /* Uppercase text */
+  text-decoration: none;
+}
+
+.btn-custom:hover {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-custom2:hover {
+  background-color: white;
+  color: #7D47FF;
+  text-decoration: none;
+}
+
+.learn-more {
+  color: black; /* Set text color to black */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Optional: Make text bold */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.learn-more:hover {
+  color: black; /* Optional: Change text color on hover */
+}
+
+.highlighted-text {
+  font-weight: bold; /* Make the text bold */
+  font-size: 60px; /* Increase the font size */
+}
+
+.text-color {
+  color: #99E1E0; /* Apply color */
+}
+
+
+@media (max-width: 768px) {
+    .image-overlay {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .highlighted-text {
+        font-size: max(1.8vw, 14px);
+    }
+    .description-text {
+        font-size: max(0.7vw, 10px);
+    }
+    .btn-custom2 {
+        font-size: max(0.7vw, 10px);
+        padding: 6px 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .text-container {
+        max-width: 95%;
+        padding: 10px;
+    }
+    .highlighted-text {
+        font-size: max(1.5vw, 12px);
+    }
+    .description-text {
+        font-size: max(0.6vw, 9px);
+    }
+    .btn-custom2 {
+        font-size: max(0.6vw, 9px);
+        padding: 5px 10px;
+        margin-bottom: 6px;
+    }
+  }
+  
+
+  .contact-section {
+    background: url('path-to-your-background-image.png') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    padding: 2rem;
+}
+
+.contact-form-container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.contact-form h1 {
+    font-size: clamp(1.5rem, 3vw, 3rem); /* Adjusts size dynamically */
+}
+
+
+
+button.btn.btn-send {
+    background: white !important;
+    color: #6a26ac !important;
+    font-weight: bold !important;
+    padding: 7px 14px !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: clamp(1rem, 1.5vw, 1.5rem) !important;
+    float: left;
+}
+
+
+
+/* Responsive grid for smaller screens */
+@media (max-width: 768px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .col-md-4 {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}

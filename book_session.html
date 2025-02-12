@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+</style>
+</head>
+<header class="header">
+    <div class="container text-center">
+        <nav>
+            <a href="#" id="about-link">About</a>
+            <a href="#" id="service-link">Services</a>
+            <a href="./index.html" class="logo">
+                <img src="images/company_logo.png" alt="Company Logo" class="company-logo-media">
+            </a>
+            <a href="#" id="contact-link">Contact Us</a>
+            <button class="book-link" onclick="window.location.href='book_session.html'">Book Session</button>
+        </nav>
+    </div>
+</header>
+    <body style="background-image: url('images/session_page.png'); background-size: cover; background-position: center center;">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 style="color: white; font-weight: bold; font-size: xxx-large;">Book Your Driving<br> Lesson Today!</h1>
+                    <p style="color: white; font-size: large;">Master the road -- book your lesson now!</p>
+                    <img src="images/8.png" alt="Driving Lesson" style="max-width: 80%; height: auto;">
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="margin-top: 5%; width: 80%; margin-left: 15%; padding: 20px;">
+                    <div class="step-indicator">
+        <div class="step-container">
+            <div class="step active" id="step-1">
+                <div class="dot"></div>
+            </div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-container">
+            <div class="step" id="step-2">
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+        <p style="font-size: 1.3em">SESSION DETAILS</p>
+<form action="https://api.web3forms.com/submit" method="POST" id="booking-form">
+    <!-- Hidden field for Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="a99a8b1b-16a1-4f5e-b456-e351edafb32a">
+    <input type="hidden" name="subject" value="New Driving Lesson Booking">
+    <input type="hidden" name="from_name" value="Your Driving School">
+    <input type="hidden" name="replyto" value="sajidthrohi79@gmail.com">
+
+    <!-- Step 1: Session Details -->
+    <div id="step-one">
+        <div class="form-group">
+            <label for="lesson">Lesson</label>
+            <select name="lesson" id="lesson" class="custom-select" required>
+                <option value="">Select service</option>
+                <option value="2hrs Manual Lessons - £90">2hrs Manual Lessons - £90</option>
+                <option value="10hrs Manual Lessons - £450">10hrs Manual Lessons - £450</option>
+                <option value="Post Test Manual Lessons (2hr) - £100">Post Test Manual Lessons (2hr) - £100</option>
+                <option value="2hrs Motorway Lesson - £150">2hrs Motorway Lesson - £150</option>
+                <option value="6hrs Pass Plus - £420">6hrs Pass Plus - £420</option>
+                <option value="5 Day Intensive Course - £1500">5 Day Intensive Course - £1500</option>
+            </select>
+            <div class="error-message" id="lesson-error" style="display: none; color: red;">This field is required.</div>
+        </div>
+        <div class="form-group">
+            <label for="instructor">Instructor</label>
+            <select name="instructor" id="instructor" class="form-control" required>
+                <option value="">Select instructor</option>
+                <option value="Sajid Bashir">Sajid Bashir</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="start_date">Start Date</label>
+            <input type="date" name="start_date" id="start_date" class="form-control" min="<?= date('Y-m-d'); ?>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="time">Select Time Slot</label>
+            <div class="d-flex flex-wrap justify-content-between time-slot-container">
+                <span class="time-slot" data-value="9:00 AM">9:00 AM</span>
+                <span class="time-slot" data-value="9:30 AM">9:30 AM</span>
+                <span class="time-slot" data-value="10:00 AM">10:00 AM</span>
+                <span class="time-slot" data-value="10:30 AM">10:30 AM</span>
+                <span class="time-slot" data-value="11:00 AM">11:00 AM</span>
+                <span class="time-slot" data-value="11:30 AM">11:30 AM</span>
+                <span class="time-slot" data-value="12:00 PM">12:00 PM</span>
+                <span class="time-slot" data-value="12:30 PM">12:30 PM</span>
+                <span class="time-slot" data-value="1:00 PM">1:00 PM</span>
+                <span class="time-slot" data-value="1:30 PM">1:30 PM</span>
+                <span class="time-slot" data-value="2:00 PM">2:00 PM</span>
+                <span class="time-slot" data-value="2:30 PM">2:30 PM</span>
+                <span class="time-slot" data-value="3:00 PM">3:00 PM</span>
+                <span class="time-slot" data-value="3:30 PM">3:30 PM</span>
+                <span class="time-slot" data-value="4:00 PM">4:00 PM</span>
+                <span class="time-slot" data-value="4:30 PM">4:30 PM</span>
+                <span class="time-slot" data-value="5:00 PM">5:00 PM</span>
+                <span class="time-slot" data-value="5:30 PM">5:30 PM</span>
+                <span class="time-slot" data-value="6:00 PM">6:00 PM</span>
+            </div>
+            <input type="hidden" name="time" id="selected-time" required>
+            <span id="time-error-container" class="error-message-emergency" style="display: none;">Please select a time slot.</span>
+        </div>
+
+        <button type="button" id="continue-btn" class="btn-color">Continue <span class="arrow"></span></button>
+    </div>
+
+    <!-- Step 2: User Details -->
+    <div id="step-two" style="display: none;">
+        <p style="font-size: 1em; margin-bottom: 10px;">YOUR DETAILS</p>
+        <div class="calendar-container">
+            <div class="col-auto">
+                <img src="images/calender.png" alt="Calendar Icon" class="calendar-icon" style="width: 75%;"> 
+            </div>
+            <div class="col">
+                <div class="details-text">
+                    <div id="booking-summary"></div> <!-- ✅ Keeps the booking summary -->
+                </div>
+            </div>
+        </div>
+        <br>
+        
+
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="phone" id="phone" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="special_request">Special Requests (Optional)</label>
+            <textarea name="special_request" id="special_request" class="form-control" style="resize: none;"></textarea>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center">
+            <button type="button" id="back-btn" class="btn back-media">Back</button>
+            <button type="submit" class="btn-color book-media">Book Now!</button>
+        </div>
+    </div>
+</form>
+            
+            <div id="step-3" style="display: none;">
+                <h3>REQUEST RECEIVED!</h3>
+                <p style="font-size: medium;">Thank you for reaching out. We’ve received your request and will respond shortly using the information you provided.
+                <br>Stay tuned!</p>
+                <p style="font-size: medium;">BOOKING SUMMARY</p>
+                <div class="calendar-container">
+                <div class="col-auto">
+                    <img src="images/calender.png" alt="Calendar Icon" class="calendar-icon" style="width: 75%;">
+                </div>
+                <div class="col">
+                    <div class="details-text">
+                    <div id="booking-details" style="font-size: 14px;">
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    <br>
+                    <div id="booking-details-contact" style="font-size: 14px;">
+                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+            </div><br> <br>
+            
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        let bookedTimes = []; // This should be populated dynamically from the server
+    
+        // Handle time range selection
+        $(".time-range").click(function () {
+            const rangeStart = $(this).data("start");
+            const rangeEnd = $(this).data("end");
+    
+            $(".time-slot").remove();
+            let timeSlotsHTML = "";
+    
+            let startTime = new Date("1970-01-01T" + rangeStart + ":00Z");
+            let endTime = new Date("1970-01-01T" + rangeEnd + ":00Z");
+    
+            while (startTime < endTime) {
+                let slotTime = startTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    
+                let disabledClass = bookedTimes.includes(slotTime) ? "disabled-time" : "";
+    
+                timeSlotsHTML += `<div class="time-slot ${disabledClass}" data-value="${slotTime}">${slotTime}</div>`;
+                startTime.setMinutes(startTime.getMinutes() + 30);
+            }
+    
+            $("#time-slots-container").html(timeSlotsHTML);
+        });
+    
+        // Ensure disabled slots cannot be clicked
+        $(document).on("click", ".time-slot", function () {
+            if ($(this).hasClass("disabled-time")) {
+                return; // Prevent selection of disabled slots
+            }
+    
+            $(".time-slot").removeClass("selected");
+            $(this).addClass("selected");
+            $("#selected-time").val($(this).data("value"));
+            $("#time-error-container").hide();
+        });
+    
+        function updateStepUI(step) {
+            if (step === 3) {
+                $("p:contains('SESSION DETAILS')").hide();
+            } else {
+                $("p:contains('SESSION DETAILS')").show();
+            }
+        }
+    
+        function formatDate(date) {
+            const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    
+            const d = new Date(date);
+            const dayOfWeek = daysOfWeek[d.getDay()];
+            const dayOfMonth = d.getDate();
+            const month = months[d.getMonth()];
+            const year = d.getFullYear();
+    
+            let suffix = "th";
+            if ([1, 21, 31].includes(dayOfMonth)) suffix = "st";
+            if ([2, 22].includes(dayOfMonth)) suffix = "nd";
+            if ([3, 23].includes(dayOfMonth)) suffix = "rd";
+    
+            return `@ ${dayOfWeek} ${month} ${dayOfMonth}${suffix}, ${year}`;
+        }
+    
+        $("#continue-btn").click(function () {
+            let lesson = $("#booking-form select").val();
+            let startDate = $("#booking-form input[type='date']").val();
+            let time = $("#selected-time").val();
+    
+            if (!lesson || !startDate || !time) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+    
+            let formattedStartDate = formatDate(startDate);
+    
+            $("#booking-summary").html(`
+                <strong style="font-size: 16px; color: #333;">${lesson}</strong><br>
+                <span style="font-size: 16px; color: #555;">${formattedStartDate}</span><br>
+                <span style="font-size: 16px; color: #555;">${time} (GMT +0)</span>
+            `);
+    
+            $("#step-one").hide();
+            $("#step-two").fadeIn();
+            $("#step-1").removeClass("active");
+            $("#step-2").addClass("active");
+    
+            updateStepUI(2);
+        });
+    
+        $("#back-btn").click(function () {
+            $("#step-two").hide();
+            $("#step-one").fadeIn();
+            $("#step-2").removeClass("active");
+            $("#step-1").addClass("active");
+        });
+    
+        $("form").submit(function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    let name = $("#name").val();
+    let email = $("#email").val();
+    let phone = $("#phone").val();
+    let specialRequest = $("#special_request").val();
+
+    if (!name || !email || !phone) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    $(".step-indicator").hide();
+    $("p[style='font-size: 0.7em']").hide();
+
+    $("#step-two").hide();
+    $("#step-3").fadeIn();
+    $("#step-2").removeClass("active");
+    $("#step-3").addClass("active");
+    updateStepUI(3);
+
+    $("#booking-details").html(`
+        <span style="font-size: 16px; color: #555; font-weight: bolder;">${$("#booking-summary strong").text()}</span><br>
+        <span style="font-size: 16px; color: #555;">${$("#booking-summary span").first().text()}</span><br>
+        <span style="font-size: 16px; color: #555;">${$("#booking-summary span").last().text()}</span>
+    `);
+
+    $("#booking-details-contact").html(`
+        <p style="border: 1px solid #828282; padding: 12px; border-radius: 5px; min-height: 40px; display: flex; align-items: center;"><strong></strong> ${name}</p>
+        <p style="border: 1px solid #828282; padding: 12px; border-radius: 5px; min-height: 40px; display: flex; align-items: center;"><strong></strong> ${email}</p>
+        <p style="border: 1px solid #828282; padding: 12px; border-radius: 5px; min-height: 40px; display: flex; align-items: center;"><strong></strong> ${phone}</p>
+        <p style="border: 1px solid #828282; padding: 12px; border-radius: 5px; min-height: 40px; display: flex; align-items: center;"><strong></strong> ${specialRequest}</p>
+    `);
+
+    // Send form data via AJAX to Web3Forms
+    $.ajax({
+        url: "https://api.web3forms.com/submit",
+        method: "POST",
+        data: $(this).serialize(),
+        dataType: "json"
+    });
+});
+
+    });
+    
+    
+    </script>
+</body>
+<footer style="position: absolute; width: 100%; left: 0;" class="footer">
+            <div class="container">
+                <nav class="nav justify-content-center">
+                    <a href="<%= root_path %>" class="nav-link">Home</a>
+                    <a href="#" id="about-link" class="nav-link">About</a>
+                    <a href="#" id="service-link" class="nav-link">Services</a>
+                    <a href="#" id="contact-link" class="nav-link">Contact Us</a>
+                    <button style="font-size: medium; color: white;" class="book-link" onclick="window.location.href='./book_session.html'">Book Session</button>
+                </nav>
+                <div class="social-icons">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <div class="divider"></div>
+                <p>Non Copyrighted © 2024 Upload by Bristol's Independent driving school</p>
+            </div>
+        </footer>
+</html>
