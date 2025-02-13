@@ -16,7 +16,7 @@
             <a href="#" id="about-link">About</a>
             <a href="#" id="service-link">Services</a>
             <a href="./index.html" class="logo">
-                <img src="images/company_logo.png" alt="Company Logo" class="company-logo-media">
+                <img src="images/new_logo.png" alt="Company Logo" class="company-logo-media">
             </a>
             <a href="#" id="contact-link">Contact Us</a>
             <button class="book-link" onclick="window.location.href='book_session.html'">Book Session</button>
@@ -183,6 +183,18 @@
     
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    let today = new Date();
+    
+    // Adjust for local timezone by getting local date instead of UTC
+    let year = today.getFullYear();
+    let month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+    let day = String(today.getDate()).padStart(2, '0');
+
+    let minDate = `${year}-${month}-${day}`; // Format as YYYY-MM-DD
+    document.getElementById("start_date").setAttribute("min", minDate);
+  });
     $(document).ready(function () {
         let bookedTimes = []; // This should be populated dynamically from the server
     
