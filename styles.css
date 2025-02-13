@@ -1292,6 +1292,10 @@ html, body {
   font-size: x-large;
 }
 
+.company-logo-media {
+  width: 11%;
+}
+
 @media (max-width: 480px) {
   .header {
       background-color: #FFFFFF;
@@ -1481,6 +1485,3 @@ button.btn.btn-send {
     }
 }
 
-.company-logo-media{
-  width: 11%;
-}
