@@ -310,6 +310,13 @@ overflow-x: hidden; /* Prevents horizontal scrolling */
   object-fit: cover;
 }
 
+@media (max-width: 480px) {
+  .responsive-img {
+    width: 100%;
+    height: 450px;
+  }
+}
+
 .image-overlay {
   position: absolute;
   top: 0;
@@ -560,11 +567,11 @@ body {
       /* Additional responsiveness for very small screens */
       @media (max-width: 480px) {
           .box-text h3 {
-              font-size: 1.2em; /* Adjust font size for smaller screens */
+              font-size: 1.6em; /* Adjust font size for smaller screens */
           }
 
           .box-text p {
-              font-size: 8px; /* Adjust font size for smaller screens */
+              font-size: 14px; /* Adjust font size for smaller screens */
           }
 
           .success-stories {
@@ -1176,11 +1183,11 @@ font-size: small;
 /* Additional responsiveness for very small screens */
 @media (max-width: 480px) {
   .box-text h3 {
-      font-size: 1.2em; /* Adjust font size for smaller screens */
+      font-size: 1.6em; /* Adjust font size for smaller screens */
   }
 
   .box-text p {
-      font-size: 8px; /* Adjust font size for smaller screens */
+      font-size: 14px; /* Adjust font size for smaller screens */
   }
 
   .success-stories {
@@ -1242,6 +1249,7 @@ html, body {
 }
 .text-content p {
   font-size: larger;
+  width: 36%;
 }
 
 .text-content h1 {
@@ -1250,14 +1258,15 @@ html, body {
 /* For very small screens like portrait mobile phones */
 @media (max-width: 480px) {
   .text-content h1 {
-      font-size: 1.8em; /* Make the title smaller */
+      font-size: 2.3em; /* Make the title smaller */
       margin-top: 21%;
   }
 
   .text-content p {
-      font-size: 0.8em; /* Adjust paragraph size for readability */
+      font-size: 1.3em; /* Adjust paragraph size for readability */
       margin-top: 6%;
-      margin-bottom: 20%;
+      margin-bottom: 30%;
+      width: auto;
   }
 
   .heading h3{
@@ -1421,14 +1430,15 @@ html, body {
         padding: 10px;
     }
     .highlighted-text {
-        font-size: max(1.5vw, 12px);
+        font-size: 30px;
     }
     .description-text {
-        font-size: max(0.6vw, 9px);
+        font-size: max(0.6vw, 14px);
+        margin-bottom: 35%;
     }
     .btn-custom2 {
-        font-size: max(0.6vw, 9px);
-        padding: 5px 10px;
+        font-size: max(0.6vw, 18px);
+        padding: 11px 22px;
         margin-bottom: 6px;
     }
   }
