@@ -1267,7 +1267,7 @@ html, body {
       margin-top: 6%;
       margin-bottom: 30%;
       width: auto;
-      color: mintcream;
+      color: white;
   }
 
   .heading h3{
@@ -1435,7 +1435,7 @@ html, body {
     }
     .description-text {
         font-size: max(0.6vw, 16px);
-        margin-bottom: 23%;
+        margin-bottom: 8%;
     }
     .btn-custom2 {
         font-size: max(0.6vw, 18px);
